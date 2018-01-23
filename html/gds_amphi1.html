@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>gds_amphi1</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+html,
+body {
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+}
+body {
+  background-color: #fff;
+}
+body .markdown-spinner {
+  margin: 48px auto;
+  background-image: url(../assets/octocat-spinner-128.gif);
+  background-repeat: no-repeat;
+  background-size: 64px;
+  background-position: top center;
+  padding-top: 70px;
+  text-align: center;
+  font-size: 16px;
+}
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="graph-and-discrete-structure">Graph and discrete structure</h1>
+
+<p>Myriam Preissman (GSCOP) - 4 lectures.<br>
+<em>Lecture 1</em></p>
+<hr>
+<h2 class="mume-header" id="room-affectation-problem">Room affectation problem</h2>
+
+<p>Set of course <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>c</mi><mn>2</mn></msub><mo>⋯</mo><msub><mi>c</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">c_1, c_2 \cdots c_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="minner">⋯</span><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span> on the same day.</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>i</mi></msub><mo>=</mo><mo>(</mo><msub><mi>B</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>K</mi><mi>i</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">C_i = (B_i, K_i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mrel">=</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mclose">)</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span> class rooms.</p>
+<h3 class="mume-header" id="examples">Examples</h3>
+
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>=</mo><mtext>08:00</mtext><mo>−</mo><mtext>11:00</mtext><mo>↦</mo><msub><mi>R</mi><mn>1</mn></msub></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>=</mo><mtext>09:00</mtext><mo>−</mo><mtext>12:30</mtext><mo>↦</mo><msub><mi>R</mi><mn>2</mn></msub></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><msub><mi>c</mi><mn>3</mn></msub><mo>=</mo><mtext>12:00</mtext><mo>−</mo><mtext>14:00</mtext><mo>↦</mo><msub><mi>R</mi><mn>1</mn></msub></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><msub><mi>c</mi><mn>4</mn></msub><mo>=</mo><mtext>13:00</mtext><mo>−</mo><mtext>16:00</mtext><mo>↦</mo><msub><mi>R</mi><mn>2</mn></msub></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><msub><mi>c</mi><mn>5</mn></msub><mo>=</mo><mtext>10:00</mtext><mo>−</mo><mtext>11:00</mtext><mo>↦</mo><msub><mi>R</mi><mn>3</mn></msub></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">\begin{aligned}
+c_1 =\text{08:00} - \text{11:00} \mapsto R_1 \\
+c_2 =\text{09:00} - \text{12:30} \mapsto R_2 \\
+c_3 = \text{12:00} - \text{14:00} \mapsto R_1 \\
+c_4 = \text{13:00} - \text{16:00} \mapsto R_2 \\
+c_5 = \text{10:00} - \text{11:00} \mapsto R_3 \\
+\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:4.750000000000001em;"></span><span class="strut bottom" style="height:9.000000000000002em;vertical-align:-4.250000000000001em;"></span><span class="base"><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4.750000000000001em;"><span style="top:-6.910000000000001em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mrel">=</span><span class="mord text"><span class="mord mathrm">08:00</span></span><span class="mbin">−</span><span class="mord text"><span class="mord mathrm">11:00</span></span><span class="mrel">↦</span><span class="mord"><span class="mord mathit" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span><span style="top:-5.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mrel">=</span><span class="mord text"><span class="mord mathrm">09:00</span></span><span class="mbin">−</span><span class="mord text"><span class="mord mathrm">12:30</span></span><span class="mrel">↦</span><span class="mord"><span class="mord mathit" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span><span style="top:-3.9099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mrel">=</span><span class="mord text"><span class="mord mathrm">12:00</span></span><span class="mbin">−</span><span class="mord text"><span class="mord mathrm">14:00</span></span><span class="mrel">↦</span><span class="mord"><span class="mord mathit" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span><span style="top:-2.4099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mrel">=</span><span class="mord text"><span class="mord mathrm">13:00</span></span><span class="mbin">−</span><span class="mord text"><span class="mord mathrm">16:00</span></span><span class="mrel">↦</span><span class="mord"><span class="mord mathit" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span><span style="top:-0.9099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">5</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mrel">=</span><span class="mord text"><span class="mord mathrm">10:00</span></span><span class="mbin">−</span><span class="mord text"><span class="mord mathrm">11:00</span></span><span class="mrel">↦</span><span class="mord"><span class="mord mathit" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span><span style="top:0.5900000000000007em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:4.250000000000001em;"></span></span></span></span></span></span></span></span></span></span></p>
+<p>Could it be assigned to 2 rooms instead ? No.</p>
+<h4 class="mume-header" id="graph-transposition">Graph transposition</h4>
+
+<p>Graph :</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>=</mo><mo>{</mo><msub><mi>c</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>c</mi><mn>2</mn></msub><mo>⋯</mo><msub><mi>c</mi><mi>n</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">V = \{c_1, c_2 \cdots c_n \}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mrel">=</span><span class="mopen">{</span><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="minner">⋯</span><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mclose">}</span></span></span></span> set of courses.</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub><msub><mi>c</mi><mi>j</mi></msub><mo>∈</mo><mi>E</mi><mo separator="true">,</mo><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i c_j \in E, c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="base"><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"></span></span></span></span></span><span class="mrel">∈</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">c_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="base"><span class="mord"><span class="mord mathit">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"></span></span></span></span></span></span></span></span> cannot be affected by the same room.</li>
+</ul>
+<hr>
+<h2 class="mume-header" id="definition">Definition</h2>
+
+<h3 class="mume-header" id="k-coloring">K-coloring</h3>
+
+<p>k-coloring o a graph : <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>V</mi><mo>↦</mo><mo>{</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mi>k</mi><mo>}</mo><mo>∋</mo><mi>c</mi><mo>(</mo><mi>v</mi><mo>)</mo><mo>≠</mo><mi>c</mi><mo>(</mo><mi>w</mi><mo>)</mo><mo separator="true">,</mo><mi mathvariant="normal">∀</mi><mi>v</mi><mi>w</mi><mo>∈</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">cV \mapsto \{1, 2, \cdots k\} \ni c(v) \neq c(w), \forall vw \in E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">c</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mrel">↦</span><span class="mopen">{</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="minner">⋯</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">}</span><span class="mrel">∋</span><span class="mord mathit">c</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mclose">)</span><span class="mrel">≠</span><span class="mord mathit">c</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mord mathrm">∀</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mrel">∈</span><span class="mord mathit" style="margin-right:0.05764em;">E</span></span></span></span></p>
+<p>The problem is equivalent to decide if G has a k-coloring.</p>
+<h4 class="mume-header" id="decide-if-g-has-a-k-coloring">Decide if G has a k-coloring</h4>
+
+<p>Decide if G has a k-coloring is NP-complete for arbitrary G and k.</p>
+<h4 class="mume-header" id="remarks">Remarks</h4>
+
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>≥</mo><mi mathvariant="normal">∣</mi><mi>V</mi><mi mathvariant="normal">∣</mi><mo>⇒</mo><mi mathvariant="normal">∃</mi><mtext> k-coloring</mtext></mrow><annotation encoding="application/x-tex">k \geq |V| \Rightarrow \exists \textit{ k-coloring}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mrel">≥</span><span class="mord mathrm">∣</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">∣</span><span class="mrel">⇒</span><span class="mord mathrm">∃</span><span class="mord text"><span class="mord mathrm"> </span><span class="mord textit">k-coloring</span></span></span></span></span>.</li>
+<li>any <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>k-coloring</mtext></mrow><annotation encoding="application/x-tex">\textit{k-coloring}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord text"><span class="mord textit">k-coloring</span></span></span></span></span> is also a <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>k’-coloring</mtext></mrow><annotation encoding="application/x-tex">\textit{k&#x27;-coloring}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord text"><span class="mord textit">k’-coloring</span></span></span></span></span> for <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>k</mi><mo mathvariant="normal">′</mo></msup><mo>≥</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">k&#x27; \geq k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.751892em;"></span><span class="strut bottom" style="height:0.887862em;vertical-align:-0.13597em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">′</span></span></span></span></span></span></span></span></span><span class="mrel">≥</span><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span>.</li>
+</ul>
+<h3 class="mume-header" id="chromatic-number">Chromatic number</h3>
+
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>χ</mi><mo>(</mo><mi>G</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\chi(G)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">χ</span><span class="mopen">(</span><span class="mord mathit">G</span><span class="mclose">)</span></span></span></span> : chromatic number of a graph <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo>{</mo><mi>k</mi><mo separator="true">,</mo><mi>G</mi><mtext> is a k-coloriable</mtext><mo>}</mo></mrow><annotation encoding="application/x-tex">= min \{k,G \textit{ is a k-coloriable} \}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mrel">=</span><span class="mord mathit">m</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mopen">{</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mord mathit">G</span><span class="mord text"><span class="mord mathrm"> </span><span class="mord textit">is</span><span class="mord mathrm"> </span><span class="mord textit">a</span><span class="mord mathrm"> </span><span class="mord textit">k-coloriable</span></span><span class="mclose">}</span></span></span></span></li>
+</ul>
+<h3 class="mume-header" id="clique">Clique</h3>
+
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>(</mo><mi>G</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\omega(G)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="mopen">(</span><span class="mord mathit">G</span><span class="mclose">)</span></span></span></span> the clique number of G <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo>{</mo><mi mathvariant="normal">∣</mi><mi>W</mi><mi mathvariant="normal">∣</mi><mo separator="true">,</mo><mi>W</mi><mo>≤</mo><mi>V</mi><mo>∋</mo><mi>w</mi><msup><mi>w</mi><mo mathvariant="normal">′</mo></msup><mo>∈</mo><mi>E</mi><mo separator="true">,</mo><mi mathvariant="normal">∀</mi><mi>w</mi><msup><mi>w</mi><mo mathvariant="normal">′</mo></msup><mo>∈</mo><mi>W</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">= max \{ |W|, W \leq V \ni ww&#x27; \in E, \forall ww&#x27; \in W \}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.751892em;"></span><span class="strut bottom" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="base"><span class="mrel">=</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">x</span><span class="mopen">{</span><span class="mord mathrm">∣</span><span class="mord mathit" style="margin-right:0.13889em;">W</span><span class="mord mathrm">∣</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.13889em;">W</span><span class="mrel">≤</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mrel">∋</span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mord"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">′</span></span></span></span></span></span></span></span></span><span class="mrel">∈</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mpunct">,</span><span class="mord mathrm">∀</span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mord"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">′</span></span></span></span></span></span></span></span></span><span class="mrel">∈</span><span class="mord mathit" style="margin-right:0.13889em;">W</span><span class="mclose">}</span></span></span></span></p>
+<p>So :</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>(</mo><mi>G</mi><mo>)</mo><mo>≤</mo><mi>χ</mi><mo>(</mo><mi>G</mi><mo>)</mo><mo>≤</mo><mi mathvariant="normal">∣</mi><mi>V</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">\omega(G) \leq \chi(G) \leq |V|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="mopen">(</span><span class="mord mathit">G</span><span class="mclose">)</span><span class="mrel">≤</span><span class="mord mathit">χ</span><span class="mopen">(</span><span class="mord mathit">G</span><span class="mclose">)</span><span class="mrel">≤</span><span class="mord mathrm">∣</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathrm">∣</span></span></span></span></p>
+<h4 class="mume-header" id="question">Question</h4>
+
+<p>Exist a 3 coloring graph with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>(</mo><mi>G</mi><mo>)</mo><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\omega(G) = 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="mopen">(</span><span class="mord mathit">G</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">2</span></span></span></span> ? Yes, if an odd cycle graph.</p>
+<hr>
+<h2 class="mume-header" id="case-k2">Case <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k=2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mrel">=</span><span class="mord mathrm">2</span></span></span></span></h2>
+
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">G</span></span></span></span> 2-colorable <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇔</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">\Leftrightarrow G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mrel">⇔</span><span class="mord mathit">G</span></span></span></span> is bipartite.<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">G</span></span></span></span> k-colorable <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇔</mo><mi mathvariant="normal">∃</mi></mrow><annotation encoding="application/x-tex">\Leftrightarrow \exists</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base"><span class="mrel">⇔</span><span class="mord mathrm">∃</span></span></span></span> partition of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>(</mo><mi>G</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">V(G)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathit">G</span><span class="mclose">)</span></span></span></span> into k-stable sets (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi><mo>⊆</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">w \subseteq V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mrel">⊆</span><span class="mord mathit" style="margin-right:0.22222em;">V</span></span></span></span> containing no edge).</p>
+<p><img src="./img/gds_amphi1_img_1.jpg" alt="1"></p>
+<p>Algorithm = Give color 1 to an arbitrary vertex as long as there is an edge <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit">x</span><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span> where <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span> has a colors and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span> no. BFS exploration.</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mn>1</mn><mo>⇒</mo><mi>c</mi><mo>(</mo><mi>y</mi><mo>)</mo><mo>:</mo><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">c(x) = 1 \Rightarrow c(y) := 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">c</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mrel">⇒</span><span class="mord mathit">c</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mrel">:</span><span class="mrel">=</span><span class="mord mathrm">2</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mn>2</mn><mo>⇒</mo><mi>c</mi><mo>(</mo><mi>y</mi><mo>)</mo><mo>:</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">c(x) = 2 \Rightarrow c(y) := 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">c</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">2</span><span class="mrel">⇒</span><span class="mord mathit">c</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mrel">:</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span></p>
+<p>If at the end of the algorithm there is an edge between two vertices of the same color we want to show that there is an odd cycle in <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">G</span></span></span></span>.</p>
+<p><img src="./img/gds_amphi1_img_2.jpg" alt="2"></p>
+<h3 class="mume-header" id="proof-that-g-is-bipartite">Proof that G is bipartite</h3>
+
+<p>G is bypartite <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇔</mo></mrow><annotation encoding="application/x-tex">\Leftrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.36687em;"></span><span class="strut bottom" style="height:0.36687em;vertical-align:0em;"></span><span class="base"><span class="mrel">⇔</span></span></span></span> G contains no odd cycle.</p>
+<h2 class="mume-header" id="greedy-algorithm-to-obtain-a-proper-coloring-of-the-vertices">Greedy algorithm to obtain a proper coloring of the vertices</h2>
+
+<p>Greedy procedure :</p>
+<p>Start with an ordering of the vertices <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>v</mi><mn>2</mn></msub><mo>⋯</mo><msub><mi>v</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">v_1, v_2 \cdots v_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="minner">⋯</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span>.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>c</mi><mo>(</mo><msub><mi>v</mi><mn>1</mn></msub><mo>)</mo><mo>=</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>c</mi><mo>(</mo><msub><mi>v</mi><mi>i</mi></msub><mo>)</mo><mo>=</mo><mi>min</mi><mo>{</mo><mi>j</mi><mi>i</mi><mo>∋</mo><mtext>there is no neighbour of </mtext><mtext> </mtext><msub><mi>v</mi><mi>i</mi></msub><mtext> that is colored </mtext><mi>j</mi><mo>}</mo></mrow></mstyle></mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">\begin{aligned}
+&amp; c(v_1) = 1 \\
+&amp; c(v_i) = \min \{ji \ni \textit{there is no neighbour of }\ v_i \textit{ that is colored } j \}
+\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.7500000000000002em;"></span><span class="strut bottom" style="height:3.0000000000000004em;vertical-align:-1.2500000000000002em;"></span><span class="base"><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.7500000000000002em;"><span style="top:-3.75em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2500000000000002em;"></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.7500000000000002em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord mathit">c</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord mathit">c</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mclose">)</span><span class="mrel">=</span><span class="mop">min</span><span class="mopen">{</span><span class="mord mathit" style="margin-right:0.05724em;">j</span><span class="mord mathit">i</span><span class="mrel">∋</span><span class="mord text"><span class="mord textit">there</span><span class="mord mathrm"> </span><span class="mord textit">is</span><span class="mord mathrm"> </span><span class="mord textit">no</span><span class="mord mathrm"> </span><span class="mord textit">neighbour</span><span class="mord mathrm"> </span><span class="mord textit">of</span><span class="mord mathrm"> </span></span><span class="mord"><span class="mspace"> </span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord text"><span class="mord mathrm"> </span><span class="mord textit">that</span><span class="mord mathrm"> </span><span class="mord textit">is</span><span class="mord mathrm"> </span><span class="mord textit">colored</span><span class="mord mathrm"> </span></span><span class="mord mathit" style="margin-right:0.05724em;">j</span><span class="mclose">}</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2500000000000002em;"></span></span></span></span></span></span></span></span></span></span></p>
+<h3 class="mume-header" id="bipartite-graph">Bipartite Graph</h3>
+
+<p>Bad coloring exemple</p>
+<p><img src="./img/gds_amphi1_img_3.jpg" alt="3"></p>
+<h3 class="mume-header" id="exercice">Exercice</h3>
+
+<p>Exists and ordering of the vertices s.t. the greedy procedure based on this order give coloring in <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>χ</mi><mo>(</mo><mi>G</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\chi(G)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">χ</span><span class="mopen">(</span><span class="mord mathit">G</span><span class="mclose">)</span></span></span></span> color ?</p>
+<p><img src="./img/gds_amphi1_img_4.jpg" alt="4"></p>
+<p>Until <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">v_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span> use only k-color, if there is a clique of size <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span>, giving a new color is OK <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.36687em;"></span><span class="strut bottom" style="height:0.36687em;vertical-align:0em;"></span><span class="base"><span class="mrel">→</span></span></span></span> The greedy procedure will give a coloring in minimum number of color.</p>
+<hr>
+<h2 class="mume-header" id="simplicial-vertex">Simplicial Vertex</h2>
+
+<p>A Simplicial Vertex of a graph <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">G</span></span></span></span> is a vertex such that <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>v</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">N(v)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span> is clique of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">G</span></span></span></span>. (with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>G</mi><mo>)</mo><mo>=</mo></mrow><annotation encoding="application/x-tex">N(G) =</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord mathit">G</span><span class="mclose">)</span><span class="mrel">=</span></span></span></span> neighborhood)</p>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#graph-and-discrete-structure">Graph and discrete structure</a>
+<ul>
+<li><a href="#room-affectation-problem">Room affectation problem</a>
+<ul>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#graph-transposition">Graph transposition</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#definition">Definition</a>
+<ul>
+<li><a href="#k-coloring">K-coloring</a>
+<ul>
+<li><a href="#decide-if-g-has-a-k-coloring">Decide if G has a k-coloring</a></li>
+<li><a href="#remarks">Remarks</a></li>
+</ul>
+</li>
+<li><a href="#chromatic-number">Chromatic number</a></li>
+<li><a href="#clique">Clique</a>
+<ul>
+<li><a href="#question">Question</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#case-k2">Case <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k=2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mrel">=</span><span class="mord mathrm">2</span></span></span></span></a>
+<ul>
+<li><a href="#proof-that-g-is-bipartite">Proof that G is bipartite</a></li>
+</ul>
+</li>
+<li><a href="#greedy-algorithm-to-obtain-a-proper-coloring-of-the-vertices">Greedy algorithm to obtain a proper coloring of the vertices</a>
+<ul>
+<li><a href="#bipartite-graph">Bipartite Graph</a></li>
+<li><a href="#exercice">Exercice</a></li>
+</ul>
+</li>
+<li><a href="#simplicial-vertex">Simplicial Vertex</a></li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    </body>
+    
+    
+    
+    
+    
+    <script>
+(function bindTaskListEvent() {
+  var taskListItemCheckboxes = document.body.getElementsByClassName('task-list-item-checkbox')
+  for (var i = 0; i < taskListItemCheckboxes.length; i++) {
+    var checkbox = taskListItemCheckboxes[i]
+    var li = checkbox.parentElement
+    if (li.tagName !== 'LI') li = li.parentElement
+    if (li.tagName === 'LI') {
+      li.classList.add('task-list-item')
+    }
+  }
+}())    
+</script>
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  </html>
